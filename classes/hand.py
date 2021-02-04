@@ -13,24 +13,24 @@ class Hand:
 
         self.cards.append(card)
         if card.rank == 'Ace':
-            self.aces = 1
+            self.aces += 1
         
         self.value = self.value + card.value
 
-        if self.value > 21 & self.aces > 0:
+        if self.value > 21 and self.aces > 0:
             self.value = self.value - 10
-            self.aces = self.aces - 1
+            self.aces -= 1
     
     def show_all (self, name):
         
-        print (name + 'Hand is: ')
+        print ('\n' + name + "'s hand is: ")
         for card in self.cards:
             print(card)
     
     def show_some (self, name):
         showcards = []
 
-        print (name + 'Hand is: ')
+        print ('\n' + name + "'s hand is: ")
         for card in self.cards:
             if card == self.cards[len(self.cards) - 1]:
                 print('Hidden card')
